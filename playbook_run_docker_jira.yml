@@ -10,6 +10,6 @@
     - name: Create directory for Jira
       shell: mkdir -p /var/atlassian/application-data/jira
 
-    - name: Disable network time setting
+    - name: Run docker
       shell: docker run -v jiraVolume:/var/atlassian/application-data/jira --name="jira" -d -p 8080:8080 atlassian/jira-software
     
