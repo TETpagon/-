@@ -16,4 +16,4 @@
     - name: Check docker
       shell: docker ps
       register: r
-    - debug: msg="{{r}}"
+    - debug: msg="{{r.stdout}}"
