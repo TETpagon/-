@@ -2,6 +2,8 @@
 - name: Setting datetime
   hosts: all
   become: true
+  vars:
+    datetime: "Nov 22 9:00:00 1996"
 
   tasks:
     - name: Disable network time setting
@@ -10,7 +12,7 @@
     - debug: msg="{{r}}"
 
     - name: Set date
-      shell: date --set "Nov 22 9:00:00 1996"
+      shell: date --set "{{datetime}}"
       register: r
     - debug: msg="{{r}}"
 
