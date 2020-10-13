@@ -1,22 +1,22 @@
 ---
 - name: Setting datetime
-    hosts: all
-    become: true
+  hosts: all
+  become: true
 
-    tasks:
+  tasks:
     - name: Disable network time setting
-        shell: timedatectl set-ntp no
-        register: r
+      shell: timedatectl set-ntp no
+      register: r
     - debug: msg="{{r}}"
 
     - name: Set date
-        shell: date --set "Nov 22 9:00:00 1996"
-        register: r
+      shell: date --set "Nov 22 9:00:00 1996"
+      register: r
     - debug: msg="{{r}}"
 
     - name: Check datetime
-        shell: date
-        register: r
+      shell: date
+      register: r
     - debug: msg="{{r}}"
 
     
