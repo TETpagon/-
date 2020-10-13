@@ -1,0 +1,15 @@
+---
+- name: Running Jira in docker
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Create docker volume for Jira
+      shell: docker volume create --name jiraVolume
+
+    - name: Create directory for Jira
+      shell: mkdir -p /var/atlassian/application-data/jira
+
+    - name: Disable network time setting
+      shell: docker run -v jiraVolume:/var/atlassian/application-data/jira --name="jira" -d -p 8080:8080 atlassian/jira-software
+    

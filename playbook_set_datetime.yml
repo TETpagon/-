@@ -8,13 +8,9 @@
   tasks:
     - name: Disable network time setting
       shell: timedatectl set-ntp no
-      register: r
-    - debug: msg="{{r}}"
 
     - name: Set date
       shell: date --set "{{datetime}}"
-      register: r
-    - debug: msg="{{r}}"
 
     - name: Check datetime
       shell: date
