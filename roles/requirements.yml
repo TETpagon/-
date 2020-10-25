@@ -1,0 +1,6 @@
+- src: https://github.com/TETpagon/role_set_datetime.git
+  scm: git
+  version: main
+- src: https://github.com/TETpagon/role_docker_jira.git
+  scm: git
+  version: main
