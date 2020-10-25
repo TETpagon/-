@@ -1,0 +1,7 @@
+---
+- name: Setting datetime
+  hosts: all
+  become: true
+
+  roles:
+    - set_datetime

@@ -1,0 +1,7 @@
+---
+- name: Running Jira in docker
+  hosts: all
+  become: true
+
+  roles:
+    - docker
