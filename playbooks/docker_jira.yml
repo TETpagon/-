@@ -4,4 +4,4 @@
   become: true
 
   roles:
-    - docker
+    - role_docker_jira
